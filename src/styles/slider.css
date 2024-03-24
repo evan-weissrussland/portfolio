@@ -1,0 +1,24 @@
+.alice-carousel__dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.alice-carousel__dots-item:not(.__custom) {
+    width: 12px ;
+    height: 12px ;
+    border-radius: 50% ;
+    background: #e5e5e5 ;
+    border: none ;
+    cursor: default;
+}
+.alice-carousel__dots-item:not(.__custom):not(:last-child) {
+    margin: 0;
+}
+ .alice-carousel__dots-item:not(.__custom).__active,
+ .alice-carousel__dots-item:not(.__custom).__active:hover  {
+    background: #fba820 ;
+}
+.alice-carousel__dots-item:not(.__custom):hover {
+    background: rgba(251, 168, 32, 0.28);
+}

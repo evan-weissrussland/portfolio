@@ -8,9 +8,7 @@ import {Blog} from "./components/Blog/Blog";
 import {Contacts} from "./components/Contacts";
 import {Statistics} from "./components/Statistics";
 import {Footer} from "./components/Footer";
-import {Services} from "./components/Serives";
-import {Gallery} from "./components/Gallery";
-
+import {Services} from "./components/Services/Services";
 
 export const App = () => {
     return (
@@ -19,7 +17,6 @@ export const App = () => {
             <Home/>
             <About/>
             <Services/>
-            <Gallery/>
             <Portfolio/>
             <Store/>
             <Blog/>

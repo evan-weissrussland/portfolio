@@ -1,9 +1,15 @@
-import React, {FC, useState} from 'react';
-import {Container} from "./assets/Container";
+import React from 'react';
+import {Container} from "../assets/Container";
 import styled from "styled-components";
-import sprite from "../images/sprite.svg";
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
+import '../../styles/slider.css'
+import {Slide} from "./Slide";
+
+
+const responsive = {
+    0: {items: 3},
+};
 
 const myOffer1 = [
     {
@@ -63,45 +69,13 @@ const myOffer1 = [
     }
 ]
 
-type SLideProps = {
-    slide: {
-        id: number,
-        title: string,
-        description: string,
-        icon: {
-            id: string,
-            width: string,
-            height: string,
-            viewBox: string
-        }
-    }
-}
+export const items = myOffer1.map(m => <Slide key={m.id} slide={m}/>)
 
-const Slide: FC<SLideProps> = (props) => {
-    const {slide: {title, description, icon}} = props
-    return (
-        <ServicesItem>
-            <svg width={icon.width} height={icon.height} viewBox={icon.viewBox} fill="none"
-                 xmlns="http://www.w3.org/2000/svg">
-                <use xlinkHref={`${sprite}#${icon.id}`}/>
-            </svg>
-            <h2>{title}</h2>
-            <p>{description}</p>
-        </ServicesItem>
-    )
-}
-
-const items = myOffer1.map(m => <Slide key={m.id} slide={m}/>)
-
-const responsive = {
-    0: {items: 3},
-};
-
-export const Gallery = () => {
+export const Services = () => {
 
     return (
         <ServicesSection id={'services'}>
-            <Container>
+            <Container $width={'1295px'}>
 
                 <ServicesWrapper>
                     <h2>What I Offer</h2>
@@ -109,7 +83,8 @@ export const Gallery = () => {
                         works.
                     </p>
                     <aside>
-                        <AliceCarousel responsive={responsive} mouseTracking={false} disableButtonsControls
+                        <AliceCarousel responsive={responsive}
+                                       disableButtonsControls
                                        items={items}/>
                     </aside>
                 </ServicesWrapper>
@@ -130,7 +105,7 @@ const ServicesWrapper = styled.div`
     min-height: 650px;
 
 
-    h2 {
+    & > h2 {
         font: 600 60px serif;
         color: #252525;
         margin-bottom: 14px;
@@ -147,41 +122,7 @@ const ServicesWrapper = styled.div`
     }
 
     aside {
-        max-width: 1275px;
         width: 100%;
     }
 `
 
-const ServicesItem = styled.div`
-    max-width: 404px;
-    width: 100%;
-    padding: 75px 47px;
-    border: 1px solid #ebebeb;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    svg {
-        fill: #767676;
-    }
-
-    &:hover {
-        box-shadow: 0 2px 40px rgba(187, 187, 187, 0.25);
-
-        svg {
-            fill: #c5c5c5;
-        }
-    }
-
-    h2 {
-        color: #535353;
-        font-size: 25px;
-        margin-bottom: 11px;
-    }
-
-    p {
-        color: #535353;
-        font: 16px/1.85 serif;
-        text-align: center;
-    }
-`

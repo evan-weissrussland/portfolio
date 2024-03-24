@@ -29,12 +29,12 @@ export const About = () => {
                             Sit faucibus suspendisse risus vulputate pulvinar cursus enim hareta eu. Sagittis enim
                             morb. Suspendisse risus.
                         </p>
-                        <div>
+                        <ButtonsGroup>
                             <Button $borderRadius={'none'}
-                                    $border={'1px solid black'}
-                                    $background={'black'}
+                                    $border={'1px solid rgba(0, 0, 0, 0.22)'}
                                     $padding={'17px 40px 19px'}
-                                    $fontSize={'16px'}>
+                                    $fontSize={'16px'}
+                                    $color={'#3f3f3f'}>
                                 hire me
                             </Button>
                             <Button $borderRadius={'none'}
@@ -44,7 +44,7 @@ export const About = () => {
                                     $color={'#3f3f3f'}>
                                 download cv
                             </Button>
-                        </div>
+                        </ButtonsGroup>
                     </div>
                     <div>
                         <ul>
@@ -146,4 +146,12 @@ export const AboutWrapper = styled.div`
 export const AboutSection = styled.section`
     background: white;
     padding: 150px 0;
+`
+const ButtonsGroup = styled.div`
+${Button} {
+    &:hover {
+        color: #f5f5f5;
+        background: black;
+    }
+}
 `

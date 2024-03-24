@@ -1,5 +1,6 @@
 {
   "name": "portfolio-start",
+  "homepage": "https://evan-weissrussland.github.com/portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -67,7 +68,10 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
+
   },
   "eslintConfig": {
     "extends": [
@@ -89,7 +93,8 @@
   },
   "devDependencies": {
     "@types/styled-components": "5.1.26",
-    "babel-plugin-styled-components": "2.0.7"
+    "babel-plugin-styled-components": "2.0.7",
+    "gh-pages": "^6.1.1"
   },
   "jest": {
     "roots": [

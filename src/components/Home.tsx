@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import iconsHome from "../images/iconsHome.svg";
-import backHomeImage from "../images/backHome.png";
+import backHomeImage from "../images/backHome1.webp";
 import {Button} from "./assets/Button";
 import {Container} from "./assets/Container";
 

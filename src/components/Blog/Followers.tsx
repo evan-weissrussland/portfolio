@@ -1,7 +1,7 @@
 import React from 'react';
 import sprite from "../../images/sprite.svg";
 import styled from "styled-components";
-import blogAva from '../../images/BlogAva.png'
+import blogAva from '../../images/BlogAva1.webp'
 
 export const Followers = () => {
     return (

@@ -31,6 +31,10 @@ const StatsData = styled.ul`
     display: flex;
     justify-content: space-between;
     margin: 0 10px;
+    flex-wrap: wrap;
+    @media (max-width: 888px) {
+        flex-direction: column;
+    }
 `
 
 const StatItem = styled.li`

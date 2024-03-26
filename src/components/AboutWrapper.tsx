@@ -104,6 +104,10 @@ const AboutWrapper = styled.div`
     margin: 0 10px;
 `
 const AboutMe = styled.div`
+    flex-shrink: 1;
+    @media (max-width: 720px) {
+        flex-shrink: 3;
+    }
     h2 {
         font-size: 60px;
         color: #252525;
@@ -128,6 +132,11 @@ const MySkills = styled.div`
     padding-top: 74px;
     display: flex;
     align-items: flex-end;
+    flex-shrink: 3;
+    @media (max-width: 720px) {
+        flex-shrink: 1;
+        min-width: 219px;
+    }
 
     ul {
         width: 100%;

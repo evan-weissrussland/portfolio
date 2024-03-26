@@ -9,9 +9,8 @@ import {Contacts} from "./components/Contacts";
 import {Statistics} from "./components/Statistics";
 import {Footer} from "./components/Footer";
 import {Services} from "./components/Services/Services";
-import React, {useEffect} from "react";
-import {Outlet, RouterProvider, useNavigate} from "react-router-dom";
-import {router} from "./router";
+import React from "react";
+import {Outlet} from "react-router-dom";
 import {Container} from "./components/assets/Container";
 import avaAboutMe from './images/Mask-Group.webp'
 import {AboutMeDescription} from "./components/AboutWrapper";

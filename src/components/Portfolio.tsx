@@ -94,6 +94,11 @@ const PortfolioWrapper = styled.div`
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
+
+        @media (max-width: 1272px) {
+            justify-content: center;
+        }
+        
     }
 
     ${Button}:hover {
@@ -120,6 +125,12 @@ const PortfolioItem = styled.div<{backImage:string}>`
     background-size: contain;
     background-repeat: no-repeat;
 
+    @media (max-width: 841px) {
+        height: 600px;
+        max-width: 100%;
+        background-size: cover;
+    }
+    
     & > div {
         position: absolute;
         top: 0;

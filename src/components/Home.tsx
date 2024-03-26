@@ -65,4 +65,5 @@ export const HomeWrapper = styled.div`
 `
  const HomeSection = styled.section`
     background: black 0 url(${backHomeImage}) no-repeat;
+    background-position: center; 
 `

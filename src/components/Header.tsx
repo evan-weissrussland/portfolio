@@ -42,6 +42,7 @@ const HeaderWrapper = styled.div`
     //padding-top: 60px;
     //border: 2px solid rgba(34, 255, 0, 0.94);
     z-index: 999999;
+    background: black;
 
 `;
 export const ContainerHeader = styled.div`
@@ -53,7 +54,12 @@ export const ContainerHeader = styled.div`
     align-items: center;
     padding: 60px 100px 0;
     margin: 0 auto;
-    background: black;
+    //background: black;
+    
+    @media (max-width: 1450px) {
+        padding: 60px 10px 0;
+        max-width: 1275px;
+    }
 `;
 export const AuthorName = styled.a`
     color: white;

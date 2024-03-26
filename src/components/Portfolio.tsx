@@ -61,7 +61,9 @@ export const Portfolio = () => {
                         </PortfolioItem>)}
 
                     </aside>
-                    <Button $background={'#3f3f3f'} $color={'#f5f5f5'}>
+                    <Button $border={'1px solid rgba(0, 0, 0, 0.22)'}
+                            $background={'#3f3f3f'}
+                            $color={'#f5f5f5'}>
                         view portfolio
                     </Button>
                 </PortfolioWrapper>
@@ -94,6 +96,11 @@ const PortfolioWrapper = styled.div`
         gap: 20px;
     }
 
+    ${Button}:hover {
+        background: white;
+        color: #3f3f3f;
+        border: 1px solid rgba(0, 0, 0, 0.22);
+    }
 `
 const Tabs = styled.ul`
     display: flex;

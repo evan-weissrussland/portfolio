@@ -35,7 +35,9 @@ export const MyBlog = () => {
                     </p>
                 </Post>)}
             </BlogPosts>
-            <Button $color={'#f5f5f5'} $background={'#3f3f3f'}>
+            <Button $border={'1px solid rgba(0, 0, 0, 0.22)'}
+                    $color={'#f5f5f5'}
+                    $background={'#3f3f3f'}>
                 read all blogs
             </Button>
         </BlogPostsWrapper>
@@ -50,6 +52,12 @@ const BlogPostsWrapper = styled.div`
         font: 60px serif;
         color: #252525;
         margin-bottom: 70px;
+    }
+
+    ${Button}:hover {
+        background: white;
+        color: #3f3f3f;
+        border: 1px solid rgba(0, 0, 0, 0.22);
     }
 `
 const BlogPosts = styled.ul`

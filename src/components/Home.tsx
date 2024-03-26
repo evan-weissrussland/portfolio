@@ -41,6 +41,10 @@ export const HomeWrapper = styled.div`
         margin-bottom: 54px;
     }
 
+    ${Button}:hover {
+        background: rgba(251, 168, 32, 0.15);
+    }
+
     p {
         font-size: 70px;
         margin-bottom: 15px;

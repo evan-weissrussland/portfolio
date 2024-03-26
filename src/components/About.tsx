@@ -4,7 +4,7 @@ import React from 'react';
 import {Container} from "./assets/Container";
 import {AboutMeDescription} from "./AboutWrapper";
 
-const aboutMeStack = [
+export const aboutMeStack = [
     {id: 1, stack: 'Adobe Photoshop', percent: 96},
     {id: 2, stack: 'Adobe Illustrator', percent: 92},
     {id: 3, stack: 'Adobe After Effect', percent: 85},

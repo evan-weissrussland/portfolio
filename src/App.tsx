@@ -9,17 +9,21 @@ import {Contacts} from "./components/Contacts";
 import {Statistics} from "./components/Statistics";
 import {Footer} from "./components/Footer";
 import {Services} from "./components/Services/Services";
+import React from "react";
+import {Outlet, RouterProvider} from "react-router-dom";
+import {router} from "./router";
 
 export const App = () => {
     return (
         <Wrapper>
             <Header/>
-            <Home/>
-            <About/>
-            <Services/>
-            <Portfolio/>
-            <Store/>
-            <Blog/>
+            {/*<Home/>*/}
+            {/*<About/>*/}
+            {/*<Services/>*/}
+            {/*<Portfolio/>*/}
+            {/*<Store/>*/}
+            {/*<Blog/>*/}
+            <Outlet/>
             <Statistics/>
             <Contacts/>
             <Footer/>
@@ -35,3 +39,23 @@ const Wrapper = styled.div`
     position: relative;
 `;
 
+export const StartPageWrappper = () => {
+    return (
+        <>
+            <Home/>
+            <About/>
+            <Services/>
+            <Portfolio/>
+            <Store/>
+            <Blog/>
+        </>
+    )
+}
+
+export const AboutPageWrappper = () => {
+    return (
+        <>
+
+        </>
+    )
+}

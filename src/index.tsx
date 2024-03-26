@@ -4,13 +4,16 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {GlobalStyles} from "./styles/GlobalStyles";
 import {App} from "./App";
+import {router} from "./router";
+import {RouterProvider} from "react-router-dom";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
     <React.StrictMode>
-        <App/>
+        {/*<App/>*/}
+        <RouterProvider router={router}/>
         <GlobalStyles/>
     </React.StrictMode>
 );

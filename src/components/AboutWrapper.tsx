@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {Button} from "./assets/Button";
 import React, {FC} from "react";
+import {useNavigate} from "react-router-dom";
 
 type Props = {
     aboutMeStack: Skill[]
@@ -13,11 +14,12 @@ type Skill = {
 }
 
 export const AboutMeDescription:FC<Props> = (props) => {
+    const navigation = useNavigate()
     const {aboutMeStack, title} = props
     return (
         <AboutWrapper>
             <AboutMe>
-                <h2>
+                <h2 onClick={()=>{navigation('about')}}>
                     {title}
                 </h2>
                 <p>

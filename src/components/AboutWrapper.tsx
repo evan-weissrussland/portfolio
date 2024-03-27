@@ -101,12 +101,20 @@ const LiItem = styled.li<{ $percent: number }>`
 const AboutWrapper = styled.div`
     display: flex;
     gap: 102px;
+    justify-content: space-between;
     margin: 0 10px;
+    
+    @media (max-width: 725px) {
+        //gap:30px
+    }
 `
 const AboutMe = styled.div`
     flex-shrink: 1;
+    max-width: 526px;
+    margin-right: 20px;
+    
     @media (max-width: 720px) {
-        flex-shrink: 3;
+        //flex-shrink: 3;
     }
     h2 {
         font-size: 60px;
@@ -123,6 +131,10 @@ const AboutMe = styled.div`
 
         & + p {
             margin: 24px 0 60px;
+            
+            @media (max-width: 630px) {
+                margin-bottom: 5px;
+            }
         }
     }
 `
@@ -133,9 +145,10 @@ const MySkills = styled.div`
     display: flex;
     align-items: flex-end;
     flex-shrink: 3;
-    @media (max-width: 720px) {
-        flex-shrink: 1;
-        min-width: 219px;
+    
+    @media (max-width: 660px) {
+        flex-shrink: 0;
+        width: 200px;
     }
 
     ul {
@@ -144,12 +157,23 @@ const MySkills = styled.div`
         flex-direction: column;
         gap: 78px;
         padding-bottom: 22px;
+
+        @media (max-width: 630px) {
+            height: 100%;
+            //justify-content: space-between;
+        }
     }
 `
 const ButtonsGroup = styled.div`
     display: flex;
     gap: 22px;
+    
+    
 
+    @media (max-width: 630px) {
+        flex-direction: column;
+    }
+    
     ${Button} {
         &:hover {
             color: #f5f5f5;

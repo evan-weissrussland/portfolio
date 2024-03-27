@@ -19,12 +19,6 @@ export const App = () => {
     return (
         <Wrapper>
             <Header/>
-            {/*<Home/>*/}
-            {/*<About/>*/}
-            {/*<Services/>*/}
-            {/*<Portfolio/>*/}
-            {/*<Store/>*/}
-            {/*<Blog/>*/}
             <Outlet/>
             <Statistics/>
             <Contacts/>

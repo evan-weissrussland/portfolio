@@ -20,6 +20,7 @@ export const Header = () => {
                     setActiveMenuItem('home')
                 }}><span>Lucas</span> Alves</AuthorName>
                 <Nav>
+                    <span></span>
                     <ul>
                         {navMenuItems.map(n => <MenuItem $active={activeMenuItem === n.link} onClick={() => {
                             setActiveMenuItem(n.link)
@@ -65,24 +66,73 @@ export const AuthorName = styled.a`
     color: white;
     font-size: 44px;
     cursor: default;
-    display: inline-block;
+    display: inline-flex;
     text-decoration: none;
-
+    flex-shrink: 1;
+    margin-right: 20px;
+    
     span {
         color: #FBA820;
     }
 `;
-export const Nav = styled.nav`
+export const Nav = styled.nav<{ $d?: boolean }>`
     max-width: 495px;
     width: 100%;
+    flex-shrink: 3;
+    text-align: right;
 
     ul {
         list-style: none;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media (max-width: 600px) {
+            display: none;
+        }      
     }
+    
+
+    span {
+        display: none;
+        height: 5px;
+        width: 40px;
+        border-radius: 5px;
+        background: #fba820;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            height: 5px;
+            width: 40px;
+            bottom: 10px;
+            border-radius: 5px;
+            left: 0;
+            background: #fba820;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            height: 5px;
+            width: 40px;
+            top: 10px;
+            border-radius: 5px;
+            left: 0;
+            background: #fba820;
+        }
+
+        @media (max-width: 600px) {
+            display: inline-block;
+        }
+    }
+
+
 `;
+
 type MenuItemPropsType = {
     $active: boolean
 }

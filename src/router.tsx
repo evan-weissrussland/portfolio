@@ -1,15 +1,5 @@
-import {createBrowserRouter} from 'react-router-dom'
+import {createBrowserRouter, Navigate} from 'react-router-dom'
 import {AboutPageWrappper, App, StartPageWrappper} from "./App";
-import {About} from "./components/About";
-import {Header} from "./components/Header";
-import {Home} from "./components/Home";
-import {Services} from "./components/Services/Services";
-import {Portfolio} from "./components/Portfolio";
-import {Store} from "./components/Store";
-import {Blog} from "./components/Blog/Blog";
-import {Statistics} from "./components/Statistics";
-import {Contacts} from "./components/Contacts";
-import {Footer} from "./components/Footer";
 
 export const router = createBrowserRouter([
     {
@@ -26,6 +16,7 @@ export const router = createBrowserRouter([
         ],
         element: <App/>,
         path: '/',
+        errorElement:<><Navigate to={'/'}/></>,
     },
 
 ])

@@ -39,7 +39,7 @@ export const Portfolio = () => {
 
     return (
         <PortfolioSection id={'portfolio'}>
-            <Container>
+            <Container $width={'1295px'}>
                 <PortfolioWrapper>
                     <h2>Portfolio</h2>
                     <Tabs>
@@ -81,6 +81,7 @@ const PortfolioWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 10px;
     h2 {
         color: #252525;
         font: 60px serif;
@@ -115,7 +116,7 @@ const Tabs = styled.ul`
     align-items: center;
     margin-bottom: 50px;
 `
-const PortfolioItem = styled.div<{backImage:string}>`
+const PortfolioItem = styled.div<{backImage?:string}>`
     position: relative;
     //outline: 1px solid mediumvioletred;
     max-width: 411px;

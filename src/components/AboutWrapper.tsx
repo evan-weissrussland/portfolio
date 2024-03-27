@@ -84,6 +84,10 @@ const LiItem = styled.li<{ $percent: number }>`
         background: #fba820;
         height: 5px;
         width: ${props => `${props.$percent}%`};
+
+        @media (max-width: 500px) {
+            top: 27px;
+        }
     }
 
     &::before {
@@ -95,15 +99,21 @@ const LiItem = styled.li<{ $percent: number }>`
         background: #eaeaea;
         height: 5px;
         width: 100%;
+
+        @media (max-width: 500px) {
+            top: 27px;
+        }
     }
 `
 
 const AboutWrapper = styled.div`
     display: flex;
     gap: 102px;
-    //justify-content: space-between;
-    
 
+    @media (max-width: 500px) {
+        flex-direction: column;
+    }
+    
     @media (max-width: 725px) {
         gap: 0;
         justify-content: space-between;
@@ -114,10 +124,7 @@ const AboutMe = styled.div`
     flex-shrink: 1;
     max-width: 526px;
     margin-right: 20px;
-    
-    @media (max-width: 720px) {
-        //flex-shrink: 3;
-    }
+
     h2 {
         font-size: 60px;
         color: #252525;
@@ -147,8 +154,12 @@ const MySkills = styled.div`
     display: flex;
     align-items: flex-end;
     flex-shrink: 3;
+
+    @media (max-width: 500px) {
+        padding-top: 20px;
+    }
     
-    @media (max-width: 660px) {
+    @media (min-width:501px) and (max-width: 660px) {
         flex-shrink: 0;
         width: 200px;
     }
@@ -160,18 +171,19 @@ const MySkills = styled.div`
         gap: 78px;
         padding-bottom: 22px;
 
+        @media (max-width: 500px) {
+            gap: 25px;
+        }
+        
         @media (max-width: 630px) {
             height: 100%;
-            //justify-content: space-between;
         }
     }
 `
 const ButtonsGroup = styled.div`
     display: flex;
-    gap: 22px;
+    gap: 22px;    
     
-    
-
     @media (max-width: 630px) {
         flex-direction: column;
     }

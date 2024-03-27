@@ -101,11 +101,13 @@ const LiItem = styled.li<{ $percent: number }>`
 const AboutWrapper = styled.div`
     display: flex;
     gap: 102px;
-    justify-content: space-between;
-    margin: 0 10px;
+    //justify-content: space-between;
     
+
     @media (max-width: 725px) {
-        //gap:30px
+        gap: 0;
+        justify-content: space-between;
+        margin: 0 10px;
     }
 `
 const AboutMe = styled.div`

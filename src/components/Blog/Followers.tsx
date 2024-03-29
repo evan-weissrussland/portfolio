@@ -47,26 +47,42 @@ const FollowersSection = styled.div`
     align-items: flex-end;
     justify-content: space-between;
     margin-bottom: 160px;
+    gap: 35px;
 
-    article {
-        max-width: 533px;
-        flex-grow: 0;
+    @media (max-width: 889px) {
+        flex-direction: column;
+        align-items: center;
     }
+    
 `
 
 const Ava = styled.div`
     background: url(${blogAva}) no-repeat center;
-    max-width: 589px;
     height: 359px;
     border-radius: 180px;
     outline: 20px solid rgba(251, 168, 32, 0.1);
-    flex-grow: 1;
+    flex: 0 1 589px;
+    
+    @media (max-width: 889px) {
+        max-width: 589px;
+        width: 100%;
+        flex: 0 1 auto;
+    }        
 `
 const Article = styled.article`
     display: flex;
     flex-direction: column;
     gap: 44px;
     padding-bottom: 10px;
+    width: 100%;
+    flex-shrink: 2;
+    max-width: 533px;
+    flex-grow: 0;
+
+    @media (max-width: 889px) {
+        flex-grow: 1;
+        max-width: 700px;
+    }
 
     & > p {
         color: #595959;
@@ -76,6 +92,10 @@ const Article = styled.article`
     & > div {
         display: flex;
         gap: 117px;
+
+        @media (min-width:375px) and (max-width: 450px) {
+           gap: calc((100vw - 375px) / (450 - 375) * (117 - 50) + 50px);
+        }
     }
 
 

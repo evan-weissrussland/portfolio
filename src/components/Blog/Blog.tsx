@@ -8,7 +8,7 @@ import {MyBlog} from "./BlogPostsWrapper";
 export const Blog = () => {
     return (
         <BlogSection id={'blog'}>
-            <Container>
+            <Container $width={'1335px'}>
                 <BlogWrapper>
                     <Followers/>
                     <MyBlog/>
@@ -22,7 +22,7 @@ const BlogSection = styled.section`
     padding: 150px 0 160px;
 `
 const BlogWrapper = styled.div`
-
+padding: 0 30px;
 `
 
 

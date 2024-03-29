@@ -15,7 +15,14 @@ export const Statistics = () => {
             <Container $width={'1220px'}>
                 <StatsData>
                     {statistics.map(s => <StatItem key={s.id}>
-                        <p>{`${s.count}+`}</p> <span>{s.description}</span>
+                        <div>
+                            <p>
+                                {`${s.count}+`}
+                            </p>
+                            <span>
+                            {s.description}
+                        </span>
+                        </div>
                     </StatItem>)}
                 </StatsData>
             </Container>
@@ -32,7 +39,8 @@ const StatsData = styled.ul`
     justify-content: space-between;
     margin: 0 10px;
     flex-wrap: wrap;
-    @media (max-width: 888px) {
+
+    @media (max-width: 499px) {
         flex-direction: column;
     }
 `
@@ -40,6 +48,19 @@ const StatsData = styled.ul`
 const StatItem = styled.li`
     display: flex;
     flex-direction: column;
+    margin-bottom: 15px;
+
+    @media (max-width: 888px) {
+        align-items: center;
+
+        div {
+            min-width: 219px;
+        }
+    }
+
+    @media (min-width: 500px) and (max-width: 888px) {
+        flex-basis: 50%;
+    }
 
     p {
         font: bold 105px serif;

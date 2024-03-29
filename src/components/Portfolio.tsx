@@ -96,8 +96,9 @@ const PortfolioWrapper = styled.div`
         flex-wrap: wrap;
         gap: 20px;
 
-        @media (max-width: 1272px) {
+        @media (max-width: 1307px) {
             justify-content: center;
+            gap: 10px;
         }
         
     }
@@ -125,13 +126,24 @@ const PortfolioItem = styled.div<{backImage?:string}>`
     background-image: url(${props => props.backImage});
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
 
-    @media (max-width: 841px) {
-        height: 600px;
+    @media (min-width: 375px) and (max-width: 549px) {
+        height: calc((100vw - 375px) / (549 - 375) * (400 - 300) + 300px);
         max-width: 100%;
         background-size: cover;
     }
-    
+
+    @media (min-width: 550px) and (max-width: 1307px) {
+        height: calc((100vw - 550px) / (1307 - 550) * (358 - 143) + 143px);
+        max-width: calc((100vw - 550px) / (1307 - 550) * (411 - 165) + 165px);
+
+        flex: 1 1 31%;
+
+        background-size: cover;
+    }
+
+
     & > div {
         position: absolute;
         top: 0;
@@ -147,13 +159,29 @@ const PortfolioItem = styled.div<{backImage?:string}>`
         justify-content: flex-end;
         padding: 30px 32px;
 
+        @media (min-width: 550px) and (max-width: 1307px) {
+            padding: calc((100vw - 550px) / (1307 - 550) * (32 - 10) + 10px);
+
+            h3 {
+                font-size: calc((100vw - 550px) / (1307 - 550) * (26 - 20) + 20px);
+            }
+        }
+
         h3 {
             font-size: 26px;
             margin-bottom: 2px;
+
+            @media (min-width: 550px) and (max-width: 1307px) {
+                font-size: calc((100vw - 550px) / (1307 - 550) * (26 - 16) + 16px);
+            }
         }
 
         p {
             font-size: 16px;
+
+            @media (min-width: 550px) and (max-width: 1307px) {
+                font-size: calc((100vw - 550px) / (1307 - 550) * (16 - 12) + 12px);
+            }
         }
 
         svg {
@@ -162,6 +190,11 @@ const PortfolioItem = styled.div<{backImage?:string}>`
             right: 38px;
             bottom: 46px;
             cursor: pointer;
+
+            @media (min-width: 550px) and (max-width: 1307px) {
+                right: calc((100vw - 550px) / (1307 - 550) * (38 - 12) + 12px);
+                bottom: calc((100vw - 550px) / (1307 - 550) * (46 - 15) + 15px);
+            }
         }
     }
 

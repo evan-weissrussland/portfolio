@@ -27,12 +27,23 @@ const ContactsWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 10px;
     
     h2 {
         color: #eaeaea;
         font:bold 72px serif;
         margin-bottom: 21px;
         letter-spacing: 0.15em;
+        text-align: center;
+        
+        @media (min-width:550px) and (max-width: 860px) {
+            font-size: calc((100vw - 550px) / (860 - 550) * (72 - 42) + 42px);
+        }
+        
+        @media (max-width: 550px) {
+            font-size: 42px;
+        }
+        
     }
     
     p {

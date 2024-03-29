@@ -3,7 +3,6 @@ import sprite from "../../images/sprite.svg";
 import styled from "styled-components";
 import {Button} from "../assets/Button";
 
-
 const posts = [
     {
         id: 1, date: '09', month: 'Feb', post: 'Why should we invest more in branding first?'
@@ -24,7 +23,7 @@ export const MyBlog = () => {
                 {posts.map(p => <Post key={p.id}>
                     <div>{p.date} <span>{p.month}</span></div>
                     <p>{p.post}
-                        <button>Read More
+                        <button> <span>Read More</span>
                             <svg width={"10"} height={'10'}
                                  viewBox={'0 0 10 10'}
                                  fill="none"
@@ -60,22 +59,37 @@ const BlogPostsWrapper = styled.div`
         border: 1px solid rgba(0, 0, 0, 0.22);
     }
 `
+
 const BlogPosts = styled.ul`
     max-width: 990px;
     width: 100%;
     margin-bottom: 80px;
 `
+
 const Post = styled.li`
     display: flex;
     align-items: center;
     padding: 40px 50px;
     border-top: 1px solid #ebebeb;
     border-bottom: 1px solid #ebebeb;
+    justify-content: space-between;
+    gap: 25px;
+
+    @media (max-width: 750px) {
+        padding: 40px 0;
+    }
 
     div {
+        white-space: nowrap;
+        width: 91px;
         color: #fba820;
         font: 48px serif;
-        margin-right: 78px;
+
+        @media (max-width: 550px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
         span {
             color: #3f3f3f;
@@ -84,6 +98,7 @@ const Post = styled.li`
     }
 
     p {
+        max-width: 721px;
         flex-grow: 1;
         display: flex;
         color: #939393;
@@ -91,6 +106,7 @@ const Post = styled.li`
         cursor: default;
         align-items: center;
         justify-content: space-between;
+        gap: 25px;
 
         &:hover {
             color: #535353;
@@ -103,12 +119,24 @@ const Post = styled.li`
             display: flex;
             gap: 10px;
             align-items: center;
-            cursor: pointer;
+            cursor: default;
+
+            span {
+                white-space: nowrap;
+            }
+
+            @media (max-width: 750px) {
+                gap: 0;
+
+                & span {
+                    width: 50px;
+                    white-space: normal;
+                }
+            }
 
             svg {
                 fill: #3f3f3f;
             }
         }
-
     }
 `

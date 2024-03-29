@@ -85,7 +85,7 @@ const LiItem = styled.li<{ $percent: number }>`
         height: 5px;
         width: ${props => `${props.$percent}%`};
 
-        @media (max-width: 500px) {
+        @media (max-width: 530px) {
             top: 27px;
         }
     }
@@ -100,7 +100,7 @@ const LiItem = styled.li<{ $percent: number }>`
         height: 5px;
         width: 100%;
 
-        @media (max-width: 500px) {
+        @media (max-width: 530px) {
             top: 27px;
         }
     }
@@ -108,9 +108,10 @@ const LiItem = styled.li<{ $percent: number }>`
 
 const AboutWrapper = styled.div`
     display: flex;
-    gap: 102px;
+    gap: 15px;
+    justify-content: space-between;
 
-    @media (max-width: 500px) {
+    @media (max-width: 530px) {
         flex-direction: column;
     }
     
@@ -155,11 +156,11 @@ const MySkills = styled.div`
     align-items: flex-end;
     flex-shrink: 3;
 
-    @media (max-width: 500px) {
+    @media (max-width: 530px) {
         padding-top: 20px;
     }
     
-    @media (min-width:501px) and (max-width: 660px) {
+    @media (min-width:531px) and (max-width: 660px) {
         flex-shrink: 0;
         width: 200px;
     }
@@ -171,7 +172,7 @@ const MySkills = styled.div`
         gap: 78px;
         padding-bottom: 22px;
 
-        @media (max-width: 500px) {
+        @media (max-width: 530px) {
             gap: 25px;
         }
         

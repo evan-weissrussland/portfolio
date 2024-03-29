@@ -24,6 +24,6 @@ export const About = () => {
 
 export const AboutSection = styled.section`
     background: white;
-    padding: 150px 0;
+    padding: 150px 10px;
 `
 

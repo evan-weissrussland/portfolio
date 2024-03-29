@@ -60,10 +60,11 @@ export const HomeWrapper = styled.div`
         height: 17px;
         background: url(${iconsHome}) no-repeat;
     }
-
-
 `
  const HomeSection = styled.section`
-    background: black 0 url(${backHomeImage}) no-repeat;
-    background-position: center; 
+    background: black  0 url(${backHomeImage}) no-repeat;
+    background-position: center ; 
+     @media (max-width: 999px) {
+         background-position: 58% center;
+     }
 `

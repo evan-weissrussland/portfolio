@@ -29,6 +29,12 @@ const FooterWrapper = styled.div`
     align-items: center;
     margin: 0 10px;
     height: 120px;
+    gap: 15px;
+    @media (max-width: 510px) {
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+    }
 p {
     color: #ababab;
     font: 14px serif;

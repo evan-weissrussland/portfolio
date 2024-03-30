@@ -38,6 +38,10 @@ const ServicesItem = styled.div`
     flex-direction: column;
     align-items: center;
 
+    @media (max-width: 1260px) {
+        margin: 0 auto;
+    }
+
     svg {
         fill: #767676;
         margin-bottom: 35px;

@@ -8,14 +8,18 @@ import {Slide} from "./Slide";
 
 
 const responsive = {
-    0: {items: 3},
+    0: {items: 1},
+    800: {items: 2},
+    1200: {items: 3},
+
+
 };
 
 const myOffer1 = [
     {
         id: 1,
         title: 'Branding Design',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci eget mi elit cursus donec amet sed sagittis.',
+        description: '1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci eget mi elit cursus donec amet sed sagittis.',
         icon: {
             id: 'apple',
             width: '60',
@@ -26,7 +30,7 @@ const myOffer1 = [
     {
         id: 2,
         title: 'T-Shirt Design',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci eget mi elit cursus donec amet sed sagittis.',
+        description: '2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci eget mi elit cursus donec amet sed sagittis.',
         icon: {
             id: 'apple',
             width: '60',
@@ -37,7 +41,7 @@ const myOffer1 = [
     {
         id: 3,
         title: 'Package Design',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci eget mi elit cursus donec amet sed sagittis.',
+        description: '3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci eget mi elit cursus donec amet sed sagittis.',
         icon: {
             id: 'apple',
             width: '60',
@@ -48,7 +52,7 @@ const myOffer1 = [
     {
         id: 4,
         title: 'Hose Design',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci eget mi elit cursus donec amet sed sagittis.',
+        description: '4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci eget mi elit cursus donec amet sed sagittis.',
         icon: {
             id: 'apple',
             width: '60',
@@ -59,7 +63,7 @@ const myOffer1 = [
     {
         id: 5,
         title: 'Bathroom Design',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci eget mi elit cursus donec amet sed sagittis.',
+        description: '5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci eget mi elit cursus donec amet sed sagittis.',
         icon: {
             id: 'apple',
             width: '60',
@@ -85,7 +89,8 @@ export const Services = () => {
                     <aside>
                         <AliceCarousel responsive={responsive}
                                        disableButtonsControls
-                                       items={items}/>
+                                       items={items}
+                                       paddingLeft={15}/>
                     </aside>
                 </ServicesWrapper>
             </Container>

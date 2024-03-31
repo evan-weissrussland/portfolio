@@ -13,18 +13,27 @@ export const navMenuItems = [
 
 export const Header = () => {
     const [activeMenuItem, setActiveMenuItem] = useState('home')
+    const [isShowMenu, setIsShowMenu] = useState(false)
     return (
-        <HeaderWrapper>
+        <HeaderWrapper $burgerMenu={isShowMenu}>
             <ContainerHeader>
                 <AuthorName href={'#home'} onClick={() => {
                     setActiveMenuItem('home')
                 }}><span>Lucas</span> Alves</AuthorName>
-                <Nav>
-                    <span></span>
+                <Nav onClick={() => {
+                    isShowMenu && setIsShowMenu(false)
+                }} $burgerMenu={isShowMenu}>
+                    <div onClick={() => {
+                        setIsShowMenu(!isShowMenu)
+                        console.log(111)
+                    }}>
+                        <span></span>
+                    </div>
                     <ul>
-                        {navMenuItems.map(n => <MenuItem $active={activeMenuItem === n.link} onClick={() => {
-                            setActiveMenuItem(n.link)
-                        }} key={n.id}>
+                        {navMenuItems.map(n => <MenuItem $burgerMenu={isShowMenu} $active={activeMenuItem === n.link}
+                                                         onClick={() => {
+                                                             setActiveMenuItem(n.link)
+                                                         }} key={n.id}>
                             <a href={`#${n.link}`}>{n.title}</a>
                         </MenuItem>)}
                     </ul>
@@ -40,8 +49,7 @@ const HeaderWrapper = styled.div`
     top: 0;
     left: 0;
     right: 0;
-    //padding-top: 60px;
-    //border: 2px solid rgba(34, 255, 0, 0.94);
+    bottom: ${props => props.$burgerMenu && '0'};
     z-index: 999999;
     background: black;
 
@@ -91,42 +99,52 @@ export const Nav = styled.nav<{ $d?: boolean }>`
             display: none;
         }      
     }
-    
 
-    span {
+    & > div {
         display: none;
-        height: 5px;
-        width: 40px;
-        border-radius: 5px;
-        background: #fba820;
+        cursor: pointer;
         position: relative;
-
-        &::before {
-            content: '';
-            position: absolute;
-            display: inline-block;
-            height: 5px;
-            width: 40px;
-            bottom: 10px;
-            border-radius: 5px;
-            left: 0;
-            background: #fba820;
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            display: inline-block;
-            height: 5px;
-            width: 40px;
-            top: 10px;
-            border-radius: 5px;
-            left: 0;
-            background: #fba820;
-        }
+        width: 45px;
+        height: 30px;
+        z-index: 9999999;
 
         @media (max-width: 600px) {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        span {
+            position: relative;
+            height: 5px;
+            width: 40px;
+            border-radius: 5px;
+            background: #fba820;
+            
+
+
+            &::before {
+                content: '';
+                position: absolute;
+                display: inline-block;
+                height: 5px;
+                width: 40px;
+                bottom: 10px;
+                border-radius: 5px;
+                left: 0;
+                background: rgba(255, 0, 195, 0.89);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                display: inline-block;
+                height: 5px;
+                width: 40px;
+                top: 10px;
+                border-radius: 5px;
+                left: 0;
+                background: rgba(34, 255, 0, 0.94);
+            }
         }
     }
 

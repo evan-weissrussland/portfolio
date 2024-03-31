@@ -44,7 +44,7 @@ export const Header = () => {
 }
 
 
-const HeaderWrapper = styled.div`
+const HeaderWrapper = styled.div<{ $burgerMenu: boolean }>`
     position: fixed;
     top: 0;
     left: 0;
@@ -52,7 +52,6 @@ const HeaderWrapper = styled.div`
     bottom: ${props => props.$burgerMenu && '0'};
     z-index: 999999;
     background: black;
-
 `;
 export const ContainerHeader = styled.div`
     max-width: 1920px;
@@ -63,8 +62,7 @@ export const ContainerHeader = styled.div`
     align-items: center;
     padding: 60px 100px 0;
     margin: 0 auto;
-    //background: black;
-    
+
     @media (max-width: 1450px) {
         padding: 60px 10px 0;
         max-width: 1275px;
@@ -78,12 +76,12 @@ export const AuthorName = styled.a`
     text-decoration: none;
     flex-shrink: 1;
     margin-right: 20px;
-    
+
     span {
         color: #FBA820;
     }
 `;
-export const Nav = styled.nav<{ $d?: boolean }>`
+export const Nav = styled.nav<{ $burgerMenu?: boolean }>`
     max-width: 495px;
     width: 100%;
     flex-shrink: 3;
@@ -96,8 +94,22 @@ export const Nav = styled.nav<{ $d?: boolean }>`
         align-items: center;
 
         @media (max-width: 600px) {
-            display: none;
-        }      
+            flex-direction: ${props => props.$burgerMenu && 'column'};
+            display: ${props => !props.$burgerMenu && 'none'};
+
+            ${props => props.$burgerMenu && '' +
+                    'position: absolute;    ' +
+                    'top: 0;    ' +
+                    'left: 0;    ' +
+                    'right: 0;    ' +
+                    'bottom: 0;    ' +
+                    'display: flex;    ' +
+                    'flex-direction: column;    ' +
+                    'justify-content: center;    ' +
+                    'gap: 50px;    ' +
+                    'align-items: center;'
+            }
+        }
     }
 
     & > div {
@@ -119,8 +131,8 @@ export const Nav = styled.nav<{ $d?: boolean }>`
             width: 40px;
             border-radius: 5px;
             background: #fba820;
-            
 
+            ${props => props.$burgerMenu && 'transform: rotate(45deg);' }
 
             &::before {
                 content: '';
@@ -131,7 +143,9 @@ export const Nav = styled.nav<{ $d?: boolean }>`
                 bottom: 10px;
                 border-radius: 5px;
                 left: 0;
-                background: rgba(255, 0, 195, 0.89);
+                background: #fba820;
+
+                ${props => props.$burgerMenu && 'display:none;' }                
             }
 
             &::after {
@@ -143,16 +157,19 @@ export const Nav = styled.nav<{ $d?: boolean }>`
                 top: 10px;
                 border-radius: 5px;
                 left: 0;
-                background: rgba(34, 255, 0, 0.94);
+                background: #fba820;
+
+                ${props => props.$burgerMenu && '' +
+                        'top:0;' +
+                        'transform: rotate(-90deg);' }
             }
         }
     }
-
-
 `;
 
 type MenuItemPropsType = {
     $active: boolean
+    $burgerMenu: boolean
 }
 export const MenuItem = styled.li<MenuItemPropsType>`
     position: relative;
@@ -160,8 +177,8 @@ export const MenuItem = styled.li<MenuItemPropsType>`
     a {
         text-decoration: none;
         color: white;
-        font-size: 16px;
-        line-height: 20px;
+        font-size: ${props => props.$burgerMenu ? '50px' : '16px'};
+        line-height: 20px;        
     }
 
     &::before {
@@ -173,5 +190,11 @@ export const MenuItem = styled.li<MenuItemPropsType>`
         border-radius: 1px;
         background: #FBA820;
         bottom: -3px;
+
+        ${props => props.$burgerMenu && '' +
+                'height: 10px; ' +
+                'border-radius: 5px; ' +
+                'bottom: -15px;'            
+        }        
     }
 `;

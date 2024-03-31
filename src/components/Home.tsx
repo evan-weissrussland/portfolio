@@ -29,8 +29,9 @@ export const Home = () => {
 }
 
 
+
 export const HomeWrapper = styled.div`
-    max-width: 370px;
+    max-width: 350px;
     width: 100%;
     padding: 318px 0 80px;
     color: white;
@@ -47,8 +48,8 @@ export const HomeWrapper = styled.div`
 
     p {
         font-size: 70px;
-        margin-bottom: 15px;
-
+        margin-bottom: 15px;        
+        
         span {
             color: #fba820;
         }

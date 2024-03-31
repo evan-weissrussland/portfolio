@@ -17,7 +17,7 @@ export const Header = () => {
     return (
         <HeaderWrapper $burgerMenu={isShowMenu}>
             <ContainerHeader>
-                <AuthorName href={'#home'} onClick={() => {
+                <AuthorName $burgerMenu={isShowMenu} href={'#home'} onClick={() => {
                     setActiveMenuItem('home')
                 }}><span>Lucas</span> Alves</AuthorName>
                 <Nav onClick={() => {
@@ -43,7 +43,6 @@ export const Header = () => {
     )
 }
 
-
 const HeaderWrapper = styled.div<{ $burgerMenu: boolean }>`
     position: fixed;
     top: 0;
@@ -68,15 +67,15 @@ export const ContainerHeader = styled.div`
         max-width: 1275px;
     }
 `;
-export const AuthorName = styled.a`
+export const AuthorName = styled.a<{$burgerMenu:boolean}>`
     color: white;
     font-size: 44px;
     cursor: default;
     display: inline-flex;
     text-decoration: none;
     flex-shrink: 1;
-    margin-right: 20px;
-
+    margin-right: 20px;    
+    
     span {
         color: #FBA820;
     }
@@ -108,6 +107,13 @@ export const Nav = styled.nav<{ $burgerMenu?: boolean }>`
                     'justify-content: center;    ' +
                     'gap: 50px;    ' +
                     'align-items: center;'
+            }            
+        }
+
+        @media (max-height: 667px) {
+            ${props => props.$burgerMenu && '' +
+                    'gap: 40px;    ' +
+                    'padding-top: 90px;'
             }
         }
     }

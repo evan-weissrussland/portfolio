@@ -102,25 +102,65 @@ const AboutWrapperSection = styled.section`
 const AboutMe = styled.div`
     margin: 115px 0;
     display: flex;
-    justify-content: center;
-    gap: 220px;
+    justify-content: space-between;
     padding: 35px 50px 35px 25px;
     align-items: center;
+
+    @media (max-width: 879px) {
+        flex-direction: column;
+    }
+
+    @media (max-width: 1350px) {
+        gap: 20px ;
+    }
+
 
     p {
         color: #535353;
         font: 40px/1.54 serif;
+        max-width: 536px;
+        width: 100%;
+        min-width: 400px;
 
         span {
             color: #FBA820;
             font-weight: bold;
         }
+
+        @media (max-width: 490px) {
+            font-size: 30px;
+            min-width: 285px;
+
+        }
+
+        @media (max-width: 879px) {
+            max-width: 100%;
+        }
+
+        @media (min-width: 880px) and (max-width: 1000px) {
+            font-size: calc((100vw - 880px) / (1000 - 880) * (40 - 30) + 30px);
+        }
     }
 
     img {
-        max-width: 519px;
-        width: 100%;
+        width: 519px;
         object-fit: cover;
+
+        @media (max-width: 650px) {
+            width: 100%;
+            aspect-ratio: 5 / 7;
+        }
+
+        @media (min-width: 651px) and (max-width: 879px) {
+            width: 100%;
+            aspect-ratio: 5 / 3;
+        }
+
+        @media (min-width: 880px) and (max-width: 1000px) {
+            width: calc((100vw - 880px) / (1000 - 880) * (519 - 330) + 330px);
+        }
+
+
     }
 `
 

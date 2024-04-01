@@ -86,7 +86,11 @@ export const AboutPageWrappper = () => {
                     <h2>
                         60 second video clip about me
                     </h2>
-                    <video src="#"></video>
+                    <iframe
+                        src={`https://www.youtube.com/embed/UQFD67B9xO0`}
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                    </iframe>
                 </MediaContent>
                 <AboutMeDescription title={'My Skills'} aboutMeStack={aboutMeStack}/>
             </Container>
@@ -113,7 +117,6 @@ const AboutMe = styled.div`
     @media (max-width: 1350px) {
         gap: 20px ;
     }
-
 
     p {
         color: #535353;
@@ -159,8 +162,6 @@ const AboutMe = styled.div`
         @media (min-width: 880px) and (max-width: 1000px) {
             width: calc((100vw - 880px) / (1000 - 880) * (519 - 330) + 330px);
         }
-
-
     }
 `
 
@@ -186,6 +187,7 @@ const MyStory = styled.article`
 const MediaContent = styled.article`
     margin: 150px auto;
     text-align: center;
+    padding: 0 10px;
 
     h2 {
         font: bold 36px serif;
@@ -193,11 +195,11 @@ const MediaContent = styled.article`
         margin-bottom: 45px;
     }
 
-    video {
+    iframe {
         border-radius: 40px;
         max-width: 980px;
         width: 100%;
         height: 561px;
-        outline: 2px solid red;
+        //outline: 2px solid red;
     }
 `

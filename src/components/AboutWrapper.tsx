@@ -110,6 +110,7 @@ const AboutWrapper = styled.div`
     display: flex;
     gap: 15px;
     justify-content: space-between;
+    padding: 0 10px;
 
     @media (max-width: 530px) {
         flex-direction: column;

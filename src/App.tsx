@@ -14,7 +14,7 @@ import {Outlet} from "react-router-dom";
 import {Container} from "./components/assets/Container";
 import avaAboutMe from './images/Mask-Group.webp'
 import {AboutMeDescription} from "./components/AboutWrapper";
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
 export const App = () => {
     return (
         <Wrapper>
@@ -55,7 +55,10 @@ export const AboutPageWrappper = () => {
                 <AboutMe>
                     <p>Hello, I’m <span>Graphic Designer</span> & Ceo of Graphic Type. I love to provide quality works.
                     </p>
-                    <img src={avaAboutMe} alt="ava"/>
+                    <LazyLoadImage
+                        src={avaAboutMe}
+                        alt={`Image`}
+                    />
                 </AboutMe>
                 <MyStory>
                     <h2>

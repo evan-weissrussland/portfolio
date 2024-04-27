@@ -25,7 +25,7 @@ export const Home = () => {
                         />
                     </article>
                     <h1>
-                        Graphic Designer & Ceo of Graphic Type. I love to provide quality works.
+                        Graphic Designer & Ceo of Graphic Type. <br/>I love to provide quality works.
                     </h1>
                     <Button $borderRadius={'30px'}
                             $border={'1px solid #fba820'}

@@ -9,7 +9,7 @@ import {Contacts} from "./components/Contacts";
 import {Statistics} from "./components/Statistics";
 import {Footer} from "./components/Footer";
 import {Services} from "./components/Services/Services";
-import React from "react";
+import React, {useLayoutEffect} from "react";
 import {Outlet} from "react-router-dom";
 import {Container} from "./components/assets/Container";
 import avaAboutMe from './images/Mask-Group.webp'
@@ -49,6 +49,12 @@ export const StartPageWrappper = () => {
 }
 
 export const AboutPageWrappper = () => {
+    useLayoutEffect(()=>{
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    },[])
     return (
         <AboutWrapperSection>
             <Container $width={'1350px'}>
